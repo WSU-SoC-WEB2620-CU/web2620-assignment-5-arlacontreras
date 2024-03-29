@@ -1,7 +1,7 @@
 // Import nav css file for nav styling
 @import "nav.scss";
 
-// Variables
+/* Variables */
 $min-width: 1200px;
 $full-width: 100%;
 $display: block;
@@ -15,7 +15,7 @@ $black-color: #303030;
 // column variable for make-column mixin
 $col-values: 1 2 3 4 5 6 7 8 9 10 11 12;
 
-//Mixins
+/* Mixins */
 @mixin reset-margin-padding {
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ $col-values: 1 2 3 4 5 6 7 8 9 10 11 12;
   width: 100% / 12 * $width;
 }
 
-// Styles
+/* Styles */
 body {
   background: #202020 url("/images/footer-bg.jpg") repeat;
   min-width: $min-width;
@@ -100,36 +100,29 @@ table {
   margin-bottom: 1em;
 }
 
+// header nesting
 header {
   margin-bottom: 2em;
   line-height: 1.7em;
+  h2 {
+    font-size: 2.5em;
+  }
+  .byline {
+    display: $display;
+    margin: 0.5em 0 0 0;
+    padding: 0 0 0.5em 0;
+    text-transform: $uppercase;
+    font-size: 1.4em;
+  }
 }
 
-header h2 {
-  font-size: 2.5em;
-}
-
-header .byline {
-  display: $display;
-  margin: 0.5em 0 0 0;
-  padding: 0 0 0.5em 0;
-  text-transform: $uppercase;
-  font-size: 1.4em;
-}
-
+// nest section and article styling
 section,
 article {
   margin-bottom: 3em;
-}
-
-section > :last-child,
-article > :last-child {
-  margin-bottom: 0;
-}
-
-section:last-child,
-article:last-child {
-  margin-bottom: 0;
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 
 blockquote {
@@ -142,7 +135,7 @@ footer {
   margin-top: 1em;
 }
 
-// Nested Classes - .container and .row
+/* Nested Classes - .container and .row */
 .container {
   width: $min-width;
   margin-left: auto;
